@@ -18,7 +18,6 @@ MiniBot is a Chrome extension that integrates with Google's Gemini AI to provide
 ## Limitations
 
 - Currently requires a local FastAPI server running for backend operations
-- Only processes the first 2000 characters of webpage content for context
 - Requires Google's Gemini API key for operation
 - Works best with text-based content pages
 - Local server needs to be running on port 8000
@@ -86,17 +85,24 @@ python functions.py
 ### Project Structure
 
 ```
-your-bot-extension/
-├── extension/
-│   ├── manifest.json
-│   ├── background.js
-│   ├── inject.js
-│   ├── inject.html
-│   └── styles.css
-├── server/
-│   ├── functions.py
-│   └── requirements.txt
-└── README.md
+bot-extension/
+├── background.js
+├── bot-icon.png
+├── ChatGPT-bot-icon.png
+├── content.js
+├── inject.css
+├── inject.html
+├── inject.js
+├── LICENSE
+├── manifest.json
+├── marked.min.js
+├── options.html
+├── popup.html
+├── popup.js
+├── README.md
+├── requirements.txt
+└── server/
+    └── functions.py
 ```
 
 ### Key Components

@@ -126,7 +126,7 @@ function initializeEventListeners() {
       textarea.style.height = "auto";
 
       // Get page context and chat history
-      const pageText = document.body.innerText.slice(0, 2000);
+      const pageText = document.body.innerText;
       const messages = await loadSavedMessages();
 
       // Convert saved messages to the format expected by the API

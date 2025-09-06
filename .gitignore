@@ -1,16 +1,35 @@
-# Virtual Environment
-# /extension_venv/
-# /venv/
-# /.venv/
-# /env/
-# /ENV/
+# # Virtual Environment - exact paths
+extension_venv/
+extension_venv/**
+**/extension_venv/
+venv/
+.venv/
+env/
 
-# Generated and temporary files
-*.new
+# Python bytecode and cache
+__pycache__/
 **/__pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
 *.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
 
 # Vector store and data files
 **/url_vectorstore/

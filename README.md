@@ -134,15 +134,6 @@ bot-extension/
 - Vector Store: FAISS for embeddings
 - UI Framework: Custom CSS with minimal dependencies
 
-## Future Improvements
-
-- Support for additional language models
-- Enhanced markdown rendering
-- Better code syntax highlighting
-- Support for image context
-- Offline mode support
-- Configuration options for users
-- Support for additional browsers
 
 ## License
 

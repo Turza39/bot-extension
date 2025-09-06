@@ -1,0 +1,44 @@
+<div class="mini-bot-container">
+  <!-- Floating Button -->
+  <div id="mini-bot-btn">
+    <div class="bot-icon">
+      <img src="ChatGPT-bot-icon.png" alt="Bot Icon" id="bot-icon-img">
+    </div>
+  </div>
+
+  <!-- Chat Window -->
+  <div id="mini-bot-chat">
+    <div class="chat-header">
+      <div class="header-title">
+        <div class="bot-avatar">🤖</div>
+        <span>Mini Assistant</span>
+      </div>
+      <div class="header-actions">
+        <button id="mini-bot-minimize">−</button>
+        <button id="mini-bot-close">×</button>
+      </div>
+    </div>
+
+    <div id="mini-bot-messages" class="chat-messages">
+      <div class="message bot-message">
+        <div class="message-content">
+          👋 Hi! I'm your Mini Assistant. How can I help you with this page?
+        </div>
+        <div class="message-time">Just now</div>
+      </div>
+    </div>
+
+    <div id="mini-bot-input" class="chat-input">
+      <textarea 
+        placeholder="Type your message..." 
+        rows="1" 
+        maxlength="1000"
+      ></textarea>
+      <button id="mini-bot-send">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

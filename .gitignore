@@ -1,0 +1,46 @@
+# Virtual Environment
+# /extension_venv/
+# /venv/
+# /.venv/
+# /env/
+# /ENV/
+
+# Generated and temporary files
+*.new
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Vector store and data files
+**/url_vectorstore/
+/url_vectorstore/
+
+# Python cache files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/*.py[cod]
+**/*$py.class
+
+# Large binary files and libraries
+**/torch/lib/*.dll
+**/torch/lib/*.lib
+**/torch/lib/*.so
+**/torch/lib/*.dylib
+
+# Project specific
+**/url_vectorstore/
+**/.env
+
+# IDE specific
+**/.vscode/
+**/.idea/
+**/*.swp
+**/*.swo
+
+# OS specific
+**/.DS_Store
+**/Thumbs.db

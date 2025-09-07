@@ -6,39 +6,32 @@ async function getApiKey() {
 const API_BASE_URL = "http://127.0.0.1:8000";
 
 function getUserFriendlyError(error) {
-  // Network errors
   if (!navigator.onLine || error.message.includes('Failed to fetch')) {
     return "Unable to connect to the assistant. Please check your internet connection.";
   }
   
-  // API key related errors
   if (error.message.includes('API key')) {
     return "Please set up your API key in the extension settings.";
   }
 
-  // Server not running
   if (error.message.includes('Failed to get response') || 
       error.message.includes('connect') ||
       error.message.includes('ECONNREFUSED')) {
     return "The assistant service is not running. Please start the local server.";
   }
 
-  // JSON parsing errors
   if (error.message.includes('parse') || error.message.includes('JSON')) {
     return "There was a problem communicating with the server. Please try again.";
   }
 
-  // No answer from server
   if (error.message.includes('No answer received')) {
     return "The assistant couldn't generate a response. Please try rephrasing your question.";
   }
 
-  // Vector store errors
   if (error.message.includes('No vector database found')) {
     return "No page content has been processed yet. Please try asking a question about the current page.";
   }
 
-  // Default error message
   return "Sorry, I'm having trouble processing your request. Please try again.";
 }
 
@@ -55,7 +48,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
           return;
         }
 
-        // Get the answer using our custom API
         const res = await fetch(`${API_BASE_URL}/ask`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -95,6 +87,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         });
       }
     })();
-    return true; // keep channel open
+    return true; 
   }
 });

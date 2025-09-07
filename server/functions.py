@@ -15,10 +15,9 @@ from typing import List, Optional, Dict
 
 app = FastAPI()
 
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for development
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -61,7 +60,7 @@ async def get_url_chunk_embedd(request: URLRequest):
         processed_docs = []
         for doc in docs:
             cleaned_content = clean_text(doc.page_content)
-            if cleaned_content:  # Only add non-empty documents
+            if cleaned_content: 
                 doc.page_content = cleaned_content
                 processed_docs.append(doc)
 
@@ -147,7 +146,6 @@ async def query(request: AskRequest):
     context = ""
     relevant_docs = []
 
-    # Try to get context from vector store if it exists
     path = Path("./url_vectorstore")
     if path.exists():
         try:
@@ -157,7 +155,6 @@ async def query(request: AskRequest):
         except Exception as e:
             print(f"Error accessing vector store: {e}")
 
-    # Try to get context from chat history if available
     if request.chat_history:
         try:
             chat_vector = chat_history_embed(request.chat_history, embedding_model)
@@ -169,11 +166,9 @@ async def query(request: AskRequest):
         except Exception as e:
             print(f"Error processing chat history: {e}")
 
-    # Build context if we have relevant documents
     if relevant_docs:
         context = "\n".join([doc.page_content for doc in relevant_docs])
 
-    # Construct prompt based on whether we have context or not
     if context:
         prompt = f"""Answer the following question. If the provided context is relevant, use it to inform your answer. Otherwise, answer from your own knowledge.
 
@@ -218,5 +213,5 @@ if __name__ == "__main__":
         "functions:app",
         host="127.0.0.1", 
         port=8000,
-        reload=True  # Enable auto-reload
+        reload=True  
     )

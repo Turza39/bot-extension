@@ -54,8 +54,9 @@ source venv/bin/activate
 3. Install required Python packages:
 ```bash
 cd server
-pip install fastapi uvicorn google-generativeai python-dotenv faiss-cpu numpy
+pip install -r requirements.txt
 ```
+** Apologies if any libraries are missing from requirements.txt.
 
 4. Start the FastAPI server:
 ```bash
@@ -63,9 +64,6 @@ python functions.py
 ```
 
 5. On first use, the extension will prompt you to enter your Gemini API key. This key will be securely stored in your browser and can be updated any time through the extension interface.
-```bash
-python functions.py
-```
 
 ### Extension Setup
 

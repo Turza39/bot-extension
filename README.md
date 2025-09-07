@@ -6,13 +6,14 @@ MiniBot is a Chrome extension that integrates with Google's Gemini AI to provide
 
 - 🤖 AI-powered contextual chat using Google's Gemini API
 - 💬 Persistent chat history across browsing sessions
+- 🎯 Context-aware responses based on current webpage content
+- 📦 Chunks to handle large contexts
+- 🔄 Vector embeddings for improved context understanding
 - 📝 Markdown support for bot responses including:
   - Code blocks with syntax highlighting
   - Lists (ordered and unordered)
   - Inline code formatting
 - 📋 One-click code copying from bot responses
-- 🎯 Context-aware responses based on current webpage content
-- 🔄 Vector embeddings for improved context understanding
 - 🎨 Clean and minimalistic UI that doesn't interfere with browsing
 
 ## Limitations
@@ -21,6 +22,7 @@ MiniBot is a Chrome extension that integrates with Google's Gemini AI to provide
 - Requires Google's Gemini API key for operation
 - Works best with text-based content pages
 - Local server needs to be running on port 8000
+- Can get context only from the current page, can't crawl through sub pages/links
 
 ## Installation
 
@@ -82,6 +84,14 @@ python functions.py
 
 ## Development
 
+### Technical Details
+
+- Backend: FastAPI with Google's Gemini API
+- Frontend: Vanilla JavaScript
+- Storage: Chrome's local storage API
+- Vector Store: FAISS for embeddings
+- UI Framework: Custom CSS with minimal dependencies
+
 ### Project Structure
 
 ```
@@ -125,15 +135,6 @@ bot-extension/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## Technical Details
-
-- Backend: FastAPI with Google's Gemini API
-- Frontend: Vanilla JavaScript
-- Storage: Chrome's local storage API
-- Vector Store: FAISS for embeddings
-- UI Framework: Custom CSS with minimal dependencies
-
 
 ## License
 
